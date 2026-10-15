@@ -1,8 +1,13 @@
 {
   "name": "CFD (rea)",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-24-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:5-24-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
   "postCreateCommand": "npm ci",
-  "remoteEnv": {
+  "containerEnv": {
     "XDG_CACHE_HOME": "${containerWorkspaceFolder}/.cache",
     "REA_CUTTER_BRIDGE_DIR": "${containerWorkspaceFolder}/.cache/rea/cutter-bridge",
     "PLAYWRIGHT_BROWSERS_PATH": "${containerWorkspaceFolder}/.cache/ms-playwright"
